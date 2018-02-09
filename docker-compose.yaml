@@ -1,0 +1,13 @@
+version: '2'
+services:
+    buildServer:
+        build: .
+        image: wuyuanyi/build-server
+
+    portainter:
+        image: portainer/portainer
+        ports:
+            - 8890:9000
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        
